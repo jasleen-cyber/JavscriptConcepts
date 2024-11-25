@@ -1,0 +1,23 @@
+set is different from an Array. array are ordered lists set of data whereas sets are unordered pool of data
+
+
+!!!!!set are not meant to replace array but rather provide additional features to complete what array is missing.
+best veaute of sets is that it removed duplicated from an array 
+
+
+JAVASCRIPT MAP
+
+holds key value pair and remembers the order of insertion of the keys
+
+
+const myMap = new Map([ ['name','john'] , ['surname','doe' ] ])
+
+
+js only supports one key object , for more than one storing we use maps
+
+
+!!!!!!!maps is used to store multiple . key value objects in JAVASCRIPT
+
+
+
+
