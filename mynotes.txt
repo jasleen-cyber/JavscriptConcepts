@@ -20,4 +20,10 @@ js only supports one key object , for more than one storing we use maps
 
 
 
+SERVER 
+server . listen 
+
+listen function m port , ip , and function
+
+
 
