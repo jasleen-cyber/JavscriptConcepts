@@ -1,29 +1,29 @@
 set is different from an Array. array are ordered lists set of data whereas sets are unordered pool of data
-
-
 !!!!!set are not meant to replace array but rather provide additional features to complete what array is missing.
 best veaute of sets is that it removed duplicated from an array 
 
 
 JAVASCRIPT MAP
-
 holds key value pair and remembers the order of insertion of the keys
-
-
 const myMap = new Map([ ['name','john'] , ['surname','doe' ] ])
-
-
 js only supports one key object , for more than one storing we use maps
-
-
 !!!!!!!maps is used to store multiple . key value objects in JAVASCRIPT
-
 
 
 SERVER 
 server . listen 
-
 listen function m port , ip , and function
+
+
+routing ---
+res.writeHead (status code , {} object)
+status code are many , that are standard , 
+and object we give a header we send to give a little msg about our response , header are also some standard ones , also we can cutomise some as well
+so header..content type " text/ html , browser now is expecting some html 
+=header to be set b4 we send out our response
+
+
+
 
 
 
