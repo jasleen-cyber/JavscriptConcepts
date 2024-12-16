@@ -12,7 +12,7 @@ js only supports one key object , for more than one storing we use maps
 
 SERVER 
 server . listen 
-listen function m port , ip , and function
+listen function m port , local host , and call back function
 
 
 routing ---
@@ -24,6 +24,47 @@ so header..content type " text/ html , browser now is expecting some html
 
 
 
+path -
+using . (dot)
+so in require , it means the current working directory 
+but in path anywhere else in code it means , directory where the script in running
+eg : ./dev-data/dev.json
+
+fs.readFile(path , text format , callback function)
+
+and readFileSync has no call back function , sync means no callback
+
+top level code :
+ the code outside callback function that only gets executed once when the code executes.
+so , this is used to read the json file which has the main data we are using and manipulating,
+so we only want to read it once for all the code and call back functions in the code.
+
+eg :- const data = fs.readFileSync(`${__dirname}/dev-data/dev.json`,'UTF-8') ;
+      const dataObj = JSON.parse(data);
+
+      using this to avoid reading the file again and again.
+
+data.json - it has array of details of products , key-value pair in strings.
+
+
+
+JSON file format is as follows :
+[{},{},{},{}]
+or
+[{"a":"b",
+"c" : "d"},{"e":"f","g":"h"},{"i":1,"j":true}]
+
+inside curly bracets key value pairs using colons
+left and right both sides in upper commas
+execpt on values side no commas for number and true/false 
+eg :[{"i":1,"j":true}]
+key value pair in one curly braket or object is sperated by commas
+
+
+
+product.html -
+templateoverview.html - 
+templateCard.html - 
 
 
 
