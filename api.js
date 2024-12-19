@@ -8,6 +8,7 @@ const dataObj = JSON.parse(data);
 
 const overviewTemp = fs.readFileSync("./Templates/overview-template.html","UTF-8");
 const cardTemp = fs.readFileSync("./Templates/card-template.html","UTF-8");
+const GurleenProduct = fs.readFileSync("gurleen.html","UTF-8");
 
 const replaceTemplate = (temp,product) => {
 let output = temp.replace(/{%IMAGE%}/g,product.image);
@@ -18,9 +19,10 @@ let output = temp.replace(/{%IMAGE%}/g,product.image);
 
  if(product.organic === false){
     output = output.replace(/{%ORGANIC%}/g,'not-organic');
-  
+
  }
 
+ output = output.replace(/{%ID%}/g,product.id);
 
  return output;
 }
@@ -51,8 +53,13 @@ res.writeHead(200,{"content-type":"html"});
     
        res.end(data);
 
-
-
+    }
+    else if(pathName === '/productid=5'){
+        res.end("<h1>Aloo kachalu beta kaha gayein the......</h1>")
+    }else if(pathName === '/productid=6'){
+        res.end("<h1>Nepali Aaagaye Oyee!!</h1>")
+        const op = GurleenProduct ;
+        res.end(op);
     }
     else{
 
@@ -65,7 +72,7 @@ res.writeHead(200,{"content-type":"html"});
 })
 
 
-Server.listen("8008","127.0.0.1",()=>{
+Server.listen("8888","127.0.0.1",()=>{
     l("listening on server baby!")
 })
 

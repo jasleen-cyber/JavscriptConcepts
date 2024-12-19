@@ -64,5 +64,16 @@
     "price": "2.50",
     "organic": true,
     "description": "In Shakespeare’s time the potato was known simply as 'the apple of love'"
+  },
+  {
+    "id": 6,
+    "productName": "Princess Gurleen",
+    "image": "🦄",
+    "from": "Asia",
+    "nutrients": "Irritating and annoying and cute also and helpful",
+    "quantity": "1 🦄🦄🦄🦄🦄",
+    "price": "20.0",
+    "organic": true,
+    "description": "her nickname is nepali, she loves to dance and skate.she loves choclates"
   }
 ]
