@@ -66,5 +66,11 @@ product.html -
 templateoverview.html - 
 templateCard.html - 
 
+using url module :
+we use url module because when we open link for products page id wise , it will show not found
+but from using url parse we take variable pathname i.e /product for all the links , 
+example for link http://127.0.0.1:8888/product?id=5 , pathname is /product so if i route with pathname variable using url parse it will display the page
+
+
 
 
