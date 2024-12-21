@@ -73,4 +73,6 @@ example for link http://127.0.0.1:8888/product?id=5 , pathname is /product so if
 
 
 
+CSS notes
+1. margin : auto - got my div in center
 

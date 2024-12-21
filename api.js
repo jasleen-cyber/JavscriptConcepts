@@ -12,6 +12,7 @@ const overviewTemp = fs.readFileSync(
   "UTF-8"
 );
 const cardTemp = fs.readFileSync("./Templates/card-template.html", "UTF-8");
+const nodeProduct = fs.readFileSync("./Templates/node-product.html","UTF-8");
 const GurleenProduct = fs.readFileSync("/Users/jkm/Desktop/JavscriptConcepts/gurleen.html");
 
 
@@ -43,18 +44,18 @@ const Server = http.createServer((req, res) => {
     res.end(output);
     l(cards);
   } else if (pathname === "/product") {
-    res.end("Prodcuts page");
+    res.end(nodeProduct);
   } else if (pathname === "/api") {
     l(cards);
     res.writeHead(200, { "content-type": "application/json" });
     res.end(data);
-  } else if (pathname === "/productid=5") {
+  } /* else if (pathname === "/productid=5") {
     res.end("<h1>Aloo kachalu beta kaha gayein the......</h1>");
   } else if (pathname === "/productid=6") {
    res.writeHead(200, { "content-type": "html" })
     //res.end("<h1>Nepali Aaagaye Oyee!!</h1>");
     //const op = GurleenProduct;
-    res.end(GurleenProduct);}
+    res.end(GurleenProduct);} */
      else {
     res.writeHead("404", {
       "content-type": "text/html",
@@ -65,6 +66,6 @@ const Server = http.createServer((req, res) => {
   }
 });
 
-Server.listen("8888", "127.0.0.1", () => {
+Server.listen("9999", "127.0.0.1", () => {
   l("listening on server baby!");
 });
