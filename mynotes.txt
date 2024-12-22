@@ -83,7 +83,10 @@ example for link http://127.0.0.1:8888/product?id=5 , pathname is /product so if
     so we need string so we doe
     const cards = dataObj.map((el) => replaceTemplate(cardTemp, el)).join(' ');
 
+    .join('') converts it into string
 
+
+imports happen at the top of the files and after importing the core modules
 
 
 CSS notes

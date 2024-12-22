@@ -1,6 +1,8 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
+
+const replaceTemplate = require('./Modules/replaceTemplate');
 //const { type } = require("os");
 const l = console.log;
 
@@ -17,25 +19,6 @@ const GurleenProduct = fs.readFileSync(
   "/Users/jkm/Desktop/JavscriptConcepts/gurleen.html"
 );
 
-const replaceTemplate = (temp, product) => {
-let output  = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
-  output = output.replace(/{%IMAGE%}/g, product.image);
-  output = output.replace(/{%QUANTITY%}/g, product.quantity);
-  output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%DESCRIPTION%}/g, product.description);
-
-  if (product.organic === false) {
-    output = output.replace(/{%ORGANIC%}/g, "not-organic");
-  }
-
-  output = output.replace(/{%ID%}/g, product.id);
-
-  output = output.replace(/{%IMGLINK%}/g, product.imglink);
-  output = output.replace(/{%FROM%}/g, product.from);
-  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
-
-  return output;
-};
 
 const Server = http.createServer((req, res) => {
   //const pathname = req.url;

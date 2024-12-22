@@ -3,3 +3,12 @@
 3. open terminal : shift + cntr + <`>
 
 
+
+
+
+
+
+imp hacks :
+1. issue : port already in use. solution :  sudo lsof -i :8000 then kill the process running on port.
+
+
