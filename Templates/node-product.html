@@ -5,7 +5,15 @@
     <style>
  .label{
     background-color:darkgreen;padding: 20px;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: 500;
+    
+ }
 
+ .label:hover{
+    background-color: rgb(102, 170, 102)
  }
  .data{
     background-color:lightgreen;padding: 20px;
@@ -14,18 +22,65 @@
  img{
     width: 100%;
  }
+ button{
+  background-color: darkgreen;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: rgb(102, 170, 102)
+ }
     </style>
 </head>
 <body>
     
-    <div style="display: flex; flex-direction: column; margin: auto; width: 40%; height: 80%; background-color: lightgreen;text-align: center; align-content: center;">
- <img src="../Pictures/gurleen_for_node.png" alt="avocado" width="128" height="128" >        
- <img src="https://www.imgonline.com.ua/examples/random-pixels-big.png" alt="avocado" width="128" height="128" >
- <img src="https://i.ibb.co/YtJccpv/gurleen-for-node.png" alt="avocado" width="128" height="128" >
- <div class="label">fresh avocado</div>
-<div class="data" > from , quantity , benefit , price </div>
-<div class="label" >add to shopping cart ($6.50)</div>
-<div class="data">discription</div>
+    <div style=" flex-direction: column; margin: auto; width: 40%; height: 80%; background-color: lightgreen;text-align: center; align-content: center;">
+<!--  <img src="../img/avocado.jpg" alt="avocado" width="128" height="128" >        
+ <img src="https://www.imgonline.com.ua/examples/random-pixels-big.png" alt="aavc" width="128" height="128" > -->
+<div style="position: relative;background-size: cover;">
+    <a href="/"><button  class="button-1" style="float: left; position: absolute;">back</button></a> 
+    <img src="{%IMGLINK%}" alt="{%PRODUCTNAME%}" width="100%" height="auto">
+</div>
+ <div class="label" >{%PRODUCTNAME%}</div>
+ <div style="flex-direction: row;display: flex; justify-content: space-evenly;text-align: center; "  >
+    <div style=>
+        <div class="data" style="flex-direction: column;text-align: left;">🌎 {%FROM%}</div>
+        <div class="data"style="flex-direction: column;text-align: left;">📦 {%QUANTITY%}</div> 
+     </div>
+     <div >
+        <div class="data" style="flex-direction: column;text-align: left;">🩷 {%NUTRIENTS%}</div>
+        <div class="data" style="flex-direction: column;text-align: left;">💰 $ {%PRICE%}</div>
+     </div>
+
+ </div>
+ 
+
+
+<div class="label" >add to shopping cart(${%PRICE%})</div>
+<div class="data">{%DESCRIPTION%}</div>
     </div>
 </body>
 
