@@ -12,17 +12,17 @@ const overviewTemp = fs.readFileSync(
   "UTF-8"
 );
 const cardTemp = fs.readFileSync("./Templates/card-template.html", "UTF-8");
-const nodeProduct = fs.readFileSync("./Templates/node-product.html","UTF-8");
-const GurleenProduct = fs.readFileSync("/Users/jkm/Desktop/JavscriptConcepts/gurleen.html");
-
-
+const nodeProduct = fs.readFileSync("./Templates/node-product.html", "UTF-8");
+const GurleenProduct = fs.readFileSync(
+  "/Users/jkm/Desktop/JavscriptConcepts/gurleen.html"
+);
 
 const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%IMAGE%}/g, product.image);
-  output = output.replace(/{%PRODUCTNAME%}/g, product.productName);
+let output  = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+  output = output.replace(/{%IMAGE%}/g, product.image);
   output = output.replace(/{%QUANTITY%}/g, product.quantity);
   output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%DETAIL%}/g, product.from);
+  output = output.replace(/{%DESCRIPTION%}/g, product.description);
 
   if (product.organic === false) {
     output = output.replace(/{%ORGANIC%}/g, "not-organic");
@@ -30,12 +30,17 @@ const replaceTemplate = (temp, product) => {
 
   output = output.replace(/{%ID%}/g, product.id);
 
+  output = output.replace(/{%IMGLINK%}/g, product.imglink);
+  output = output.replace(/{%FROM%}/g, product.from);
+  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
+
   return output;
 };
 
 const Server = http.createServer((req, res) => {
   //const pathname = req.url;
-  const pathname = url.parse(req.url , true).pathname ;
+  const pathname = url.parse(req.url, true).pathname;
+  const query = url.parse(req.url, true).query;
 
   if (pathname === "/") {
     const cards = dataObj.map((el) => replaceTemplate(cardTemp, el));
@@ -44,7 +49,10 @@ const Server = http.createServer((req, res) => {
     res.end(output);
     l(cards);
   } else if (pathname === "/product") {
-    res.end(nodeProduct);
+    const productel = dataObj[query.id] ;
+    res.writeHead(200, { "content-type": "text/html" });
+     const output = replaceTemplate(nodeProduct,productel);
+        res.end(output);
   } else if (pathname === "/api") {
     l(cards);
     res.writeHead(200, { "content-type": "application/json" });
@@ -55,8 +63,7 @@ const Server = http.createServer((req, res) => {
    res.writeHead(200, { "content-type": "html" })
     //res.end("<h1>Nepali Aaagaye Oyee!!</h1>");
     //const op = GurleenProduct;
-    res.end(GurleenProduct);} */
-     else {
+    res.end(GurleenProduct);} */ else {
     res.writeHead("404", {
       "content-type": "text/html",
       "my-own-header": "jasleenWins",
@@ -66,6 +73,6 @@ const Server = http.createServer((req, res) => {
   }
 });
 
-Server.listen("9999", "127.0.0.1", () => {
-  l("listening on server baby!");
+Server.listen("8000", "127.0.0.1", () => {
+  l("listening on  server baby!");
 });
